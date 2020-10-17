@@ -36,13 +36,25 @@ func getChargerStatus(_ charger: String) throws -> String{
             do {
                 let chargerData = try decoder.decode(Charger.self, from: chargerData) //json을 디코드해서 데이터화
                 if chargerData != nil{
+                
+                    
                     let stateName:String? = chargerData.statNm
                     let chargerAddress:String? = chargerData.addr
                     let chargerUseTime:String? = chargerData.useTime
                     let chargerBusinessName:String? = chargerData.busiNm
-                    let chargerState:String? = chargerData.stat
-                    
+                    var chargerState:String? = chargerData.stat
+                
                     var returnValue:String = ""
+                    
+                    if chargerState! == "2" {
+                        chargerState = "사용 가능"
+                    }else if chargerState! == "3"{
+                        chargerState = "사용중"
+                    } else{
+                        chargerState = "점검중"
+                    }
+                    
+                    
                     returnValue += ("충전소 명 : " + stateName! + "\n")
                     returnValue += ("충전소 주소 : " + chargerAddress! + "\n")
                     returnValue += ("이용 시간 : " + chargerUseTime! + "\n")

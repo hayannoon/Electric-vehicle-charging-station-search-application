@@ -11,6 +11,7 @@
 import UIKit
 import GoogleMaps
 
+var selectedId: String = ""
 
 class ViewController: UIViewController {
 
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
-    
     
 
     

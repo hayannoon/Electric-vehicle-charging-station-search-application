@@ -77,8 +77,6 @@ struct Charger:Codable
         statUpdDt = try values.decodeIfPresent(String.self, forKey: .statUpdDt)
         powerType = try values.decodeIfPresent(String.self, forKey: .powerType)
     }
-
-    
 }
 
 
@@ -92,16 +90,20 @@ func makeGMS(_ charger: Charger) -> GMSMarker?{
         let latitude = Double(charger.lat!)
         let longitude = Double(charger.lng!)
         maker.position = CLLocationCoordinate2DMake(latitude!,longitude!)
-        maker.title = charger.statId! + charger.addr!
+        maker.title = charger.statId! //+ charger.addr!
         
         maker.snippet = charger.addr!
-        if(charger.statId == "EV003133" || charger.statId == "CV000000"){
+        if(charger.statId == "CV000000" || charger.statId == "GN000665"){
             maker.snippet = try? getChargerStatus(charger.statId!)
+            
+            //maker.snippet = "why not?"
         }
        //try? getChargerStatus(charger.statId!)
-        print(charger.addr!)
+      
+        //print(charger.addr!)
         return maker
     }
+    print("for debug")
         return nil
 }
 
