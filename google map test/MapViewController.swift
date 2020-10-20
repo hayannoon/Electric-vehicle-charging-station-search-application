@@ -18,9 +18,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
              super.viewDidLoad()
-             // Do any additional setup after loading the view.
-             // Create a GMSCameraPosition that tells the map to display the
-             // coordinate -33.86,151.20 at zoom level 6.
+            
         
         var markerList: [GMSMarker] = [] //마커들을 저장할 배열 생성
         
@@ -51,13 +49,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
          } //구조체 다 저장하고
         
         
-        
-        
-        
-        
-        
            
-        let camera = GMSCameraPosition.camera(withLatitude: 35.97039200000, longitude: 126.68426200000, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 35.554539999999, longitude: 129.3081599999, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
             mapView.delegate = self
             mapView.isMyLocationEnabled = true //내가 추가
@@ -77,7 +70,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool { //Marker에 거는 이벤트
         let statId = marker.title
         let desc = try? getChargerStatus(statId!)
-        
+
         
         let alert = UIAlertController(title: "충전소 세부정보", message: desc, preferredStyle: .alert)
 

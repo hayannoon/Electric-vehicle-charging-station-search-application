@@ -23,7 +23,6 @@ struct Chargers:Codable{
         let values = try decoder.container(keyedBy: CKeys.self)
         chargers = try values.decodeIfPresent([Charger].self, forKey: .chargers)
     }
-    
 }
 
 struct Charger:Codable
@@ -93,11 +92,13 @@ func makeGMS(_ charger: Charger) -> GMSMarker?{
         maker.title = charger.statId! //+ charger.addr!
         
         maker.snippet = charger.addr!
+        /*
         if(charger.statId == "CV000000" || charger.statId == "GN000665"){
             maker.snippet = try? getChargerStatus(charger.statId!)
             
             //maker.snippet = "why not?"
         }
+ */
        //try? getChargerStatus(charger.statId!)
       
         //print(charger.addr!)

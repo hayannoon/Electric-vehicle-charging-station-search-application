@@ -14,7 +14,7 @@ class SpecificationViewController : UIViewController ,UITextViewDelegate{
     {
       super.viewDidLoad()
         
-        let specification:String? = try? getChargerStatus(selectedId)
+        let specification:String? = try? getAllChargerStatus(selectedId)
         
         
         let view = UIView()
