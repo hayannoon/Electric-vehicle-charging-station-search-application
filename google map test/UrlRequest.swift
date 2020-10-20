@@ -61,10 +61,18 @@ func getChargerStatus(_ charger: String) throws -> String{
                         numberOfAvailable += 1
                     }
                     if(i==0) {
+                        if stateName != nil{
                     returnValue += ("충전소 명 : " + stateName! + "\n")
-                    returnValue += ("충전소 주소 : " + chargerAddress! + "\n")
+                        }
+                        if chargerAddress != nil {
+                            returnValue += ("충전소 주소 : " + chargerAddress! + "\n")
+                        }
+                        if chargerUseTime != nil {
                     returnValue += ("이용 시간 : " + chargerUseTime! + "\n")
+                        }
+                        if chargerBusinessName != nil {
                     returnValue += ("충전소 업체 : " + chargerBusinessName! + "\n")
+                        }
                         if chargerState == "2" {
                             isAvailable = "이용 가능"
                         } else{
@@ -118,11 +126,18 @@ func getAllChargerStatus(_ charger: String) throws -> String{
                     if chargerState == "2" {
                         numberOfAvailable += 1
                     }
-                    returnValue += ("충전소 명 : " + stateName! + "\n")
-                    returnValue += ("충전기 Id : " + chargerId! + "\n")
-                    returnValue += ("충전소 주소 : " + chargerAddress! + "\n")
-                    returnValue += ("이용 시간 : " + chargerUseTime! + "\n")
-                    returnValue += ("충전소 업체 : " + chargerBusinessName! + "\n")
+                    if stateName != nil{
+                returnValue += ("충전소 명 : " + stateName! + "\n")
+                    }
+                    if chargerAddress != nil {
+                        returnValue += ("충전소 주소 : " + chargerAddress! + "\n")
+                    }
+                    if chargerUseTime != nil {
+                returnValue += ("이용 시간 : " + chargerUseTime! + "\n")
+                    }
+                    if chargerBusinessName != nil {
+                returnValue += ("충전소 업체 : " + chargerBusinessName! + "\n")
+                    }
                     if chargerState == "2" {
                         isAvailable = "이용 가능"
                     } else{
