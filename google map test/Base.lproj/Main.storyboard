@@ -118,6 +118,47 @@
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="71.651785714285708"/>
         </scene>
+        <!--Chargers Table View Controller-->
+        <scene sceneID="Bnj-py-dIN">
+            <objects>
+                <viewController storyboardIdentifier="ChargersTableViewController" id="f0v-YY-Ms5" customClass="ChargersTableViewController" customModule="google_map_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TGd-kn-snh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QIJ-aR-PJd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ckZ-43-fTY" userLabel="cell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ckZ-43-fTY" id="AND-dA-onx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="f0v-YY-Ms5" id="W5g-Fe-yFg"/>
+                                    <outlet property="delegate" destination="f0v-YY-Ms5" id="qF5-iz-GN5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kqd-qD-J0r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QIJ-aR-PJd" firstAttribute="top" secondItem="kqd-qD-J0r" secondAttribute="top" id="3CH-bE-Fg3"/>
+                            <constraint firstItem="kqd-qD-J0r" firstAttribute="bottom" secondItem="QIJ-aR-PJd" secondAttribute="bottom" id="6bY-GF-KQP"/>
+                            <constraint firstItem="QIJ-aR-PJd" firstAttribute="leading" secondItem="kqd-qD-J0r" secondAttribute="leading" id="Hh5-vK-7Ga"/>
+                            <constraint firstItem="kqd-qD-J0r" firstAttribute="trailing" secondItem="QIJ-aR-PJd" secondAttribute="trailing" id="jF0-jy-aUS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bA-JZ-qke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746.376811594203" y="71.651785714285708"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
