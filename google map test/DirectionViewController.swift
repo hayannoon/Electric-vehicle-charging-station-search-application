@@ -17,6 +17,20 @@ class DirectionViewController: UIViewController,UITextFieldDelegate {
                controller.delegate = self //딜리게이트
                present(controller, animated: true, completion: nil) //보여주기
                }
+    
+    
+    
+    @IBAction func tesetButton(_ sender: Any) {
+        //옵셔널 바인딩
+               if let controller = self.storyboard?.instantiateViewController(identifier: "ChargersTableViewController"){
+                
+                    // 2. 찾은 컨트롤러로 이동한다. (push Controller)
+                   self.navigationController?.pushViewController(controller, animated: true)
+               }
+        
+        
+    }
+    
                
 }
 
