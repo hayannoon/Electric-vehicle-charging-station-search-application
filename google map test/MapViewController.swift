@@ -78,7 +78,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 
             selectedId = statId!
             //옵셔널 바인딩
-            if let controller = self.storyboard?.instantiateViewController(identifier: "SpecificationViewController"){
+            if let controller = self.storyboard?.instantiateViewController(identifier: "ChargersTableViewController"){
                     
                  // 2. 찾은 컨트롤러로 이동한다. (push Controller)
                 self.navigationController?.pushViewController(controller, animated: true)

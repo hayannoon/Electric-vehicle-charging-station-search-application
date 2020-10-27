@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		332F81072546CC5F008C6B93 /* ChargersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */; };
 		33306E4F253B2F7A0091B60D /* SpecificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33306E4E253B2F7A0091B60D /* SpecificationViewController.swift */; };
+		333AAE5B25484A9500F9F02A /* ChargersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */; };
 		333BEB11251C624700C0546B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BEB10251C624700C0546B /* MapViewController.swift */; };
 		333BEB13251C828E00C0546B /* Chargers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BEB12251C828E00C0546B /* Chargers.swift */; };
 		333BEB15251C892A00C0546B /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BEB14251C892A00C0546B /* DirectionViewController.swift */; };
@@ -228,7 +228,7 @@
 				3393301A251B3444006DB5A6 /* ViewController.swift in Sources */,
 				338B2F6A25236678004A6EA2 /* UrlRequest.swift in Sources */,
 				333BEB15251C892A00C0546B /* DirectionViewController.swift in Sources */,
-				332F81072546CC5F008C6B93 /* ChargersTableViewController.swift in Sources */,
+				333AAE5B25484A9500F9F02A /* ChargersTableViewController.swift in Sources */,
 				33306E4F253B2F7A0091B60D /* SpecificationViewController.swift in Sources */,
 				33933016251B3444006DB5A6 /* AppDelegate.swift in Sources */,
 				33933018251B3444006DB5A6 /* SceneDelegate.swift in Sources */,

@@ -12,6 +12,8 @@ import UIKit
 import GoogleMaps
 
 var selectedId: String = ""
+var selectedNumberOfChargers: Int = 0
+
 
 class ViewController: UIViewController {
 

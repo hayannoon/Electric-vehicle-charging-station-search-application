@@ -14,6 +14,8 @@ class SpecificationViewController : UIViewController ,UITextViewDelegate{
     {
       super.viewDidLoad()
         
+        
+        /*
         let specification:String? = try? getAllChargerStatus(selectedId)
         
         
@@ -32,12 +34,16 @@ class SpecificationViewController : UIViewController ,UITextViewDelegate{
             label.sizeToFit()
         view.addSubview(label)
         self.view = view
+        
+        */
+        
     }
-    
+    /*
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
         }
     }
+ */
 }

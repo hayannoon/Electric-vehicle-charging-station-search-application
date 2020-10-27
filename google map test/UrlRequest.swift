@@ -8,7 +8,9 @@
 
 import Foundation
 
-
+func addJson(_ origin: String) -> String {
+    return "{ \"chargers\" :" + origin + "}"
+}
 
 func httpRequestHandler(_ ChargerID:String)  throws -> String {
     let baseUrl = "http://34.64.73.242:3000/api/getChargerInfo/"
@@ -20,6 +22,16 @@ func httpRequestHandler(_ ChargerID:String)  throws -> String {
     let parsedResponse = "\(response[firstIndex..<lastIndex])"
           
     return parsedResponse
+}
+
+
+func httpRequestHandlerVer2(_ ChargerID:String)  throws -> String {
+    let baseUrl = "http://34.64.73.242:3000/api/getChargerInfo/"
+    let completedUrl = baseUrl + ChargerID
+    let url = URL(string: completedUrl)
+          let response = try String(contentsOf: url!)
+          
+    return addJson(response)
 }
 
 
@@ -105,6 +117,7 @@ func getAllChargerStatus(_ charger: String) throws -> String{
     let parsedSegment = splitTheResponse(urlResponse)
     var i = 0
     var numberOfChargers = parsedSegment.count
+    selectedNumberOfChargers = numberOfChargers //전역변수 변경
     var numberOfAvailable = 0
     var returnValue:String = ""
     var isAvailable = "이용 불가능"
@@ -161,6 +174,30 @@ func getAllChargerStatus(_ charger: String) throws -> String{
     return returnValue
        // return ""
     }
+
+
+   
+func getSelectedChargerStructures(_ charger: String) throws -> [Charger]?{
+    //id받아서 충전기 배열로 반환하는 function
+    let urlResponse = try httpRequestHandlerVer2(charger)
+    
+    if let chargerData = urlResponse.data(using: .utf8)
+    {
+        let decoder = JSONDecoder()
+        
+        do {
+            let chargerArray = try decoder.decode(Chargers.self, from: chargerData) //json을 디코드해서 데이터화
+            // json data를 파싱해서 chargerArray에 넣는다.
+            if chargerArray.chargers?.self[0].addr != nil{
+                return (chargerArray.chargers.self)!
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+        return nil
+}
+    
     
 
 
