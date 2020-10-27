@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="849" y="72"/>
         </scene>
-        <!--Specification View Controller-->
+        <!--Reservation View Controller-->
         <scene sceneID="XS3-pU-Nef">
             <objects>
-                <viewController storyboardIdentifier="SpecificationViewController" id="eWL-UQ-hYd" customClass="SpecificationViewController" customModule="google_map_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReservationViewController" id="eWL-UQ-hYd" customClass="ReservationViewController" customModule="google_map_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1kl-IV-Sxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjZ-CO-dRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844.9275362318842" y="71.651785714285708"/>
+            <point key="canvasLocation" x="2451" y="72"/>
         </scene>
         <!--Chargers Table View Controller-->
         <scene sceneID="Bnj-py-dIN">
@@ -161,15 +161,15 @@
                                                         <constraint firstAttribute="width" secondItem="ctj-ei-pz9" secondAttribute="height" multiplier="7:10" id="Hfj-DR-YI7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-VH-PBc">
-                                                    <rect key="frame" x="117" y="11" width="277" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My Charger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-VH-PBc">
+                                                    <rect key="frame" x="106" y="10" width="277" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Charger Specification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqd-NB-nhR">
-                                                    <rect key="frame" x="117" y="55" width="266" height="118"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Charger Specification" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqd-NB-nhR">
+                                                    <rect key="frame" x="128" y="47" width="266" height="126"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -178,6 +178,7 @@
                                                 <constraint firstItem="ctj-ei-pz9" firstAttribute="centerY" secondItem="AND-dA-onx" secondAttribute="centerY" id="2yl-D6-b0y"/>
                                                 <constraint firstItem="aIQ-VH-PBc" firstAttribute="top" secondItem="AND-dA-onx" secondAttribute="top" constant="11" id="CF2-3Z-Akh"/>
                                                 <constraint firstItem="qqd-NB-nhR" firstAttribute="centerX" secondItem="AND-dA-onx" secondAttribute="centerX" id="N3c-AJ-4Jp"/>
+                                                <constraint firstItem="aIQ-VH-PBc" firstAttribute="centerX" secondItem="AND-dA-onx" secondAttribute="centerX" id="acM-ct-FdT"/>
                                                 <constraint firstAttribute="trailing" secondItem="aIQ-VH-PBc" secondAttribute="trailing" constant="20" symbolic="YES" id="c9V-iI-lmw"/>
                                                 <constraint firstItem="ctj-ei-pz9" firstAttribute="height" secondItem="AND-dA-onx" secondAttribute="height" multiplier="0.575" constant="-10" id="hMm-xf-rBf"/>
                                                 <constraint firstItem="ctj-ei-pz9" firstAttribute="leading" secondItem="AND-dA-onx" secondAttribute="leading" constant="15" id="hz1-50-7sn"/>
@@ -210,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bA-JZ-qke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746.376811594203" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1661" y="72"/>
         </scene>
     </scenes>
     <resources>

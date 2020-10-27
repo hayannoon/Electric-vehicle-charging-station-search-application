@@ -108,5 +108,56 @@ func makeGMS(_ charger: Charger) -> GMSMarker?{
         return nil
 }
 
+func convertStatus(intValue : String) -> String {
+    var status = ""
+    
+    switch intValue{
+    case "1" :
+        status = "통신이상"
+    case "2" :
+        status = "충전대기(이용가능)"
+    case "3" :
+        status = "충전중"
+    case "4" :
+        status = "운영준비"
+    case "5" :
+        status = "점검중"
+    default :
+        status = "상태 미확인"
+    }
+        return status
+}
 
 
+    func convertType(intValue : String) -> String {
+        
+        var type = ""
+        switch intValue {
+        case "01" :
+            type = "DC차데모"
+        case "02" :
+            type = "AC완속"
+        case "03" :
+            type = "DC차데모+AC상"
+        case "04" :
+            type = "DC콤보"
+        case "05" :
+            type = "DC차데모+DC콤보"
+        case "06" :
+            type = "DC차데모+AC상+DC콤보"
+        case "07" :
+            type = "AC상"
+        default :
+            type = "타입 미확인"
+        }
+        
+        return type
+    }
+
+func convertPowerType(intValue : String?) -> String {
+    if intValue == nil {
+        return "완속충전"
+    }else{
+        return "고속충전"
+    }
+}

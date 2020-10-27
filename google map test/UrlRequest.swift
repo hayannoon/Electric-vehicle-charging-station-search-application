@@ -91,7 +91,7 @@ func getChargerStatus(_ charger: String) throws -> String{
                             isAvailable = "이용 불가능"
                         }
                     returnValue += ("현재 충전소 상태 : " + isAvailable + "\n")
-                    returnValue += "----------------\n"
+                    returnValue += "----------------------------\n"
                     }
                     i+=1
                 }
@@ -157,7 +157,7 @@ func getAllChargerStatus(_ charger: String) throws -> String{
                         isAvailable = "이용 불가능"
                     }
                 returnValue += ("현재 충전소 상태 : " + isAvailable + "\n")
-                    returnValue += "----------------\n"
+                    returnValue += "-----------------------------------\n"
                    i+=1
                 }
                   
@@ -198,7 +198,36 @@ func getSelectedChargerStructures(_ charger: String) throws -> [Charger]?{
         return nil
 }
     
-    
+var statNm:String?
+var statId:String?
+var chgerId:String?
+var chgerType:String?
+var addr:String?
+var lat:String?
+var lng:String?
+var useTime:String?
+var busiId:String?
+var busiNm:String?
+var busiCall:String?
+var stat:String?
+var statUpdDt:String?
+var powerType:String?
+
+func explainChargerStatus(charger: Charger) -> String {
+    var returnValue = ""
+    if charger == nil {
+        return returnValue
+    } else{
+        returnValue += "\n"
+        returnValue += ("충전소 Id : " + charger.statId! + "\n")
+        returnValue += ("충전기 Id : " + charger.chgerId! + "\n")
+        returnValue += ("충전기 타입 : " + convertType(intValue: charger.chgerType!) + "\n")
+        returnValue += ("충전기 파워 타입 : " + convertPowerType(intValue: charger.powerType) + "\n")
+        returnValue += ("충전기 상태 : " + convertStatus(intValue: charger.stat!) )
+        
+        return returnValue
+    }
+}
 
 
 

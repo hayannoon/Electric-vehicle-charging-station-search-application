@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class SpecificationViewController : UIViewController ,UITextViewDelegate{
+class ReservationViewController : UIViewController ,UITextViewDelegate{
     
     override func viewDidLoad()
     {
@@ -16,6 +16,7 @@ class SpecificationViewController : UIViewController ,UITextViewDelegate{
         
         
         /*
+         
         let specification:String? = try? getAllChargerStatus(selectedId)
         
         
