@@ -10,20 +10,34 @@ import UIKit
 
 class ChargersTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var chargerArray:[Charger]? = nil
-    
-  
-    
+  //  var chargerArray:[Charger]? = nil
     var listCount = 0
+    
+    var chargerArray: [Charger]? = try! getSelectedChargerStructures(selectedId)!
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // DetailViewController 데이터 줄꺼에요
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? ReservationViewController
+            if let index = sender as? Int {
+                vc?.name = chargerArray![index].statId
+                //vc?.bounty = chargerArray![index].chgerId
+                vc?.bounty = explainChargerStatus(charger: chargerArray![index])
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         do{
         chargerArray = try getSelectedChargerStructures(selectedId)!
         } catch
         {
             print("Error")
         }
+ */
         // 현재 선택된 충전소 정보 세팅
         // Do any additional setup after loading the view.
     }
@@ -69,13 +83,17 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("---> \(indexPath.row)")
-        
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         //옵셔널 바인딩
+        
+        /*
         if let controller = self.storyboard?.instantiateViewController(identifier: "ReservationViewController"){
          
              // 2. 찾은 컨트롤러로 이동한다. (push Controller)
             self.navigationController?.pushViewController(controller, animated: true)
         }
+ */
+ 
         
     }
 }

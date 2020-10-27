@@ -10,41 +10,29 @@ import Foundation
 
 class ReservationViewController : UIViewController ,UITextViewDelegate{
     
-    override func viewDidLoad()
-    {
-      super.viewDidLoad()
-        
-        
-        /*
-         
-        let specification:String? = try? getAllChargerStatus(selectedId)
-        
-        
-        let view = UIView()
-            view.backgroundColor = .white
-            //
-            // Label Sample
-            let label = UILabel()
-            label.numberOfLines = 0
-            label.backgroundColor = .black
-            label.frame = CGRect(x: 0, y: 200, width: 1400    , height: 1400)
-            label.text = specification! + "\n\n\n\n자 이제 예약을 해보자" //"Hello World!" + "\n" + "line"
-            label.textColor = .white
-            //
-            // 1. 사이즈가 텍스트에 맞게 조절됨.
-            label.sizeToFit()
-        view.addSubview(label)
-        self.view = view
-        
-        */
-        
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var bountyLabel: UILabel!
+
+    var name: String?
+    var bounty: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUI()
     }
-    /*
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
+    
+    func updateUI() {
+        if let name = self.name, let bounty = self.bounty {
+            let img = UIImage(named: "charger icon.png")
+            imgView.image = img
+           nameLabel.text = "Reservation"
+           bountyLabel.text = bounty
         }
     }
- */
+    
+    
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
