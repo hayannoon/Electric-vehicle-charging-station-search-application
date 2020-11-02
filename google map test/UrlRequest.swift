@@ -35,6 +35,17 @@ func httpRequestHandlerVer2(_ ChargerID:String)  throws -> String {
 }
 
 
+func httpRequestHandlerGetReservationInfo(_ StatID:String, _ ChargerID:String)  throws -> String {
+    let baseUrl = "http://34.64.73.242:3000/api/getReserveInfo/"
+    let completedUrl = baseUrl + StatID + "/" + ChargerID
+    let url = URL(string: completedUrl)
+          let response = try String(contentsOf: url!)
+    return addJson(response)
+}
+
+
+
+
 func splitTheResponse(_ origin: String) -> [String] {
     var splitedSegment = origin.components(separatedBy: "},")
     let count = splitedSegment.count
@@ -230,6 +241,31 @@ func explainChargerStatus(charger: Charger) -> String {
 }
 
 
+func httpRequestHandlerGetReservationInfo(_ StatID:String, _ ChargerID:String)  throws -> [String] {
+    let baseUrl = "http://34.64.73.242:3000/api/getReserveInfo/"
+    let completedUrl = baseUrl + StatID + "/" + ChargerID
+    let url = URL(string: completedUrl)
+          let response = try String(contentsOf: url!)
+    let firstIndex = response.index(response.startIndex, offsetBy: 2)
+    let lastIndex = response.index(response.endIndex, offsetBy: -2)
+    let parsedResponse = "\(response[firstIndex..<lastIndex])"
+    
+    
+    var splitedSegment = parsedResponse.components(separatedBy: ",")
+    let count = splitedSegment.count
+    var i = 0
+    print("count : " + "\(count)")
+    
+    print(splitedSegment)
+    
+    while i < count-1 {
+        var restSegment = splitedSegment[i].components(separatedBy: ":")
+        splitedSegment[i] = restSegment[1]
+        i += 1
+    }
+    
+    return splitedSegment
+}
 
 /*
 func getChargerStatus(_ charger: String) throws -> String{
