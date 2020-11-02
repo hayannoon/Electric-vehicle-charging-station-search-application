@@ -19,6 +19,7 @@
 		3393301D251B3444006DB5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3393301B251B3444006DB5A6 /* Main.storyboard */; };
 		3393301F251B3447006DB5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3393301E251B3447006DB5A6 /* Assets.xcassets */; };
 		33933022251B3447006DB5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33933020251B3447006DB5A6 /* LaunchScreen.storyboard */; };
+		33AAA73E254BF6E900D86CBB /* TimeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAA73D254BF6E900D86CBB /* TimeSelectViewController.swift */; };
 		DAFC1CCD80B18FC44CEE4462 /* libPods-google map test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C8BB72660FDAFE734274B4 /* libPods-google map test.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		3393301E251B3447006DB5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33933021251B3447006DB5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33933023251B3447006DB5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33AAA73D254BF6E900D86CBB /* TimeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectViewController.swift; sourceTree = "<group>"; };
 		8D61DF9A98DBB481D8348ADE /* Pods-google map test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google map test.release.xcconfig"; path = "Target Support Files/Pods-google map test/Pods-google map test.release.xcconfig"; sourceTree = "<group>"; };
 		D2DC0E072292365226CE6444 /* Pods-google map test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-google map test.debug.xcconfig"; path = "Target Support Files/Pods-google map test/Pods-google map test.debug.xcconfig"; sourceTree = "<group>"; };
 		F0C8BB72660FDAFE734274B4 /* libPods-google map test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-google map test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				338B2F6925236678004A6EA2 /* UrlRequest.swift */,
 				33306E4E253B2F7A0091B60D /* ReservationViewController.swift */,
 				332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */,
+				33AAA73D254BF6E900D86CBB /* TimeSelectViewController.swift */,
 			);
 			path = "google map test";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				338B2F6A25236678004A6EA2 /* UrlRequest.swift in Sources */,
 				333BEB15251C892A00C0546B /* DirectionViewController.swift in Sources */,
 				333AAE5B25484A9500F9F02A /* ChargersTableViewController.swift in Sources */,
+				33AAA73E254BF6E900D86CBB /* TimeSelectViewController.swift in Sources */,
 				33306E4F253B2F7A0091B60D /* ReservationViewController.swift in Sources */,
 				33933016251B3444006DB5A6 /* AppDelegate.swift in Sources */,
 				33933018251B3444006DB5A6 /* SceneDelegate.swift in Sources */,

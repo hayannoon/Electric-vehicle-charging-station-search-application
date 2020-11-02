@@ -97,6 +97,74 @@
             </objects>
             <point key="canvasLocation" x="39.130434782608695" y="742.63392857142856"/>
         </scene>
+        <!--Time Select View Controller-->
+        <scene sceneID="rVV-aV-t76">
+            <objects>
+                <viewController storyboardIdentifier="TimeSelectViewController" id="EO5-dl-Qp7" customClass="TimeSelectViewController" customModule="google_map_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GHP-lT-DgM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JdB-UT-rT4">
+                                <rect key="frame" x="0.0" y="46" width="414" height="662"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="70" id="7oP-uc-LZN" customClass="timeCell" customModule="google_map_test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7oP-uc-LZN" id="ic7-gj-zY0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2w-lX-AwF">
+                                                    <rect key="frame" x="0.0" y="11" width="414" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="414" id="2o0-a5-S57"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U2w-lX-AwF" firstAttribute="centerY" secondItem="ic7-gj-zY0" secondAttribute="centerY" constant="1" id="hEt-yx-P3P"/>
+                                                <constraint firstItem="U2w-lX-AwF" firstAttribute="centerX" secondItem="ic7-gj-zY0" secondAttribute="centerX" id="otn-bT-yNs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="U2w-lX-AwF" id="CJ9-ig-Odh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EO5-dl-Qp7" id="N9T-Fc-knu"/>
+                                    <outlet property="delegate" destination="EO5-dl-Qp7" id="kB1-de-yAJ"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESERVATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpy-GL-oDr">
+                                <rect key="frame" x="20" y="0.0" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L3N-Fh-5iz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L3N-Fh-5iz" firstAttribute="trailing" secondItem="JdB-UT-rT4" secondAttribute="trailing" id="67F-Ip-rUI"/>
+                            <constraint firstItem="JdB-UT-rT4" firstAttribute="top" secondItem="qpy-GL-oDr" secondAttribute="bottom" constant="10" id="9dC-fQ-unj"/>
+                            <constraint firstItem="qpy-GL-oDr" firstAttribute="top" secondItem="L3N-Fh-5iz" secondAttribute="top" id="CQf-ua-ghg"/>
+                            <constraint firstItem="qpy-GL-oDr" firstAttribute="leading" secondItem="L3N-Fh-5iz" secondAttribute="leading" constant="20" id="Zac-fQ-ZfX"/>
+                            <constraint firstItem="JdB-UT-rT4" firstAttribute="leading" secondItem="L3N-Fh-5iz" secondAttribute="leading" id="b7C-rM-SNH"/>
+                            <constraint firstItem="qpy-GL-oDr" firstAttribute="centerX" secondItem="L3N-Fh-5iz" secondAttribute="centerX" id="bDt-lP-bHW"/>
+                            <constraint firstItem="L3N-Fh-5iz" firstAttribute="bottom" secondItem="JdB-UT-rT4" secondAttribute="bottom" constant="100" id="ruj-NP-85i"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gp1-uw-dCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="72"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="Iai-tM-VwS">
             <objects>
@@ -117,11 +185,11 @@
             <objects>
                 <viewController storyboardIdentifier="ReservationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWL-UQ-hYd" customClass="ReservationViewController" customModule="google_map_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1kl-IV-Sxk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGf-dO-wNG">
-                                <rect key="frame" x="182" y="647" width="50" height="50"/>
+                                <rect key="frame" x="182" y="701" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Zqv-wl-pYi"/>
                                     <constraint firstAttribute="height" constant="50" id="yw1-7w-vHs"/>
@@ -166,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjZ-CO-dRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450.7246376811595" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1764" y="751"/>
         </scene>
         <!--Chargers Table View Controller-->
         <scene sceneID="Bnj-py-dIN">
@@ -241,7 +309,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="eWL-UQ-hYd" kind="presentation" identifier="showDetail" id="W9a-iF-RfG"/>
+                        <segue destination="EO5-dl-Qp7" kind="presentation" identifier="showDetail" id="EUI-nX-4R5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bA-JZ-qke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

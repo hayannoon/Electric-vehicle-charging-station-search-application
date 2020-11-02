@@ -19,27 +19,20 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // DetailViewController 데이터 줄꺼에요
         if segue.identifier == "showDetail" {
-            let vc = segue.destination as? ReservationViewController
+            let vc = segue.destination as? TimeSelectViewController
             if let index = sender as? Int {
-                vc?.name = chargerArray![index].statId
-                //vc?.bounty = chargerArray![index].chgerId
-                vc?.bounty = explainChargerStatus(charger: chargerArray![index])
+                vc?.stationId = chargerArray![index].statId //name에는 충전소 id를 준다.
+                
+                vc?.chargerId = chargerArray![index].chgerId
+                //vc?.bounty = explainChargerStatus(charger: chargerArray![index])
+                
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        do{
-        chargerArray = try getSelectedChargerStructures(selectedId)!
-        } catch
-        {
-            print("Error")
-        }
- */
-        // 현재 선택된 충전소 정보 세팅
-        // Do any additional setup after loading the view.
+    
     }
     
     
@@ -68,7 +61,7 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
         }
       //  let img = UIImage(named: "charger icon.jpg")
       //  cell.imgView.image = img
-        cell.nameLabel.text = chargerArray![indexPath.row].statNm //nameList[indexPath.row]
+        cell.nameLabel.text = chargerArray![indexPath.row].statNm  //nameList[indexPath.row]
         
         cell.bountyLabel.text = try? getAllChargerStatus(chargerArray![indexPath.row].statId!)//"\(bountyList[indexPath.row])"
         

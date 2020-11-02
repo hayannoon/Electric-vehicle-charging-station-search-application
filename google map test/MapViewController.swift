@@ -62,7 +62,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         for mark in markerList{
                    mark.map = mapView
                }
-        
        }
     
     
@@ -70,7 +69,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool { //Marker에 거는 이벤트
         let statId = marker.title
         let desc = try? getChargerStatus(statId!)
-
+        
         
         let alert = UIAlertController(title: "충전소 세부정보", message: desc, preferredStyle: .alert)
 
