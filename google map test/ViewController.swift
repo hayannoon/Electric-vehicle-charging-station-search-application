@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @IBAction func directionBtn(_ sender: Any) {
         //옵셔널 바인딩
-               if let controller = self.storyboard?.instantiateViewController(identifier: "DirectionViewController"){
+               if let controller = self.storyboard?.instantiateViewController(identifier: "DirectionSearchViewController"){
                 
                     // 2. 찾은 컨트롤러로 이동한다. (push Controller)
                    self.navigationController?.pushViewController(controller, animated: true)

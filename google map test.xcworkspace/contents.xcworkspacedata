@@ -5,6 +5,9 @@
       location = "group:../../../../Downloads/chungnam.gpx">
    </FileRef>
    <FileRef
+      location = "group:allchargers.json">
+   </FileRef>
+   <FileRef
       location = "group:google map test.xcodeproj">
    </FileRef>
    <FileRef

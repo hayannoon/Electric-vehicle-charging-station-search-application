@@ -48,8 +48,6 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
             return UITableViewCell()
         }
         
-
-        
         
         //성립 되면 여기로
         

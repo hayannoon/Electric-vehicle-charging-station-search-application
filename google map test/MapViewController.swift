@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 
 
+//let CHARGERS_PATH = String(#file[...#file.index(#file.lastIndex(of: "/")!, offsetBy: -7)] + "allchargers.json")
+
 let fullPath = "/Users/minu/Downloads/allchargers.json" //json파일 경로
 //let fullPath = "./allchargers.json" //json파일 경로
 
