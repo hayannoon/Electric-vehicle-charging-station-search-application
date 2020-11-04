@@ -71,7 +71,8 @@ let googleApiKey = "AIzaSyDZhs48L08E0PYN1ZZuepYI3p8D5daWujc"
 let naverClientId: String = "hzdvp26eix"
 let naverClientSecret: String = "rhHkuYItGK6PHR49pXOJFl8prgjRWxZiiFgri9FM"
 
-
+var origin: GMSPlace!
+var destination: GMSPlace!
 
 var GMS_PATH: GMSMutablePath? = nil
 
@@ -81,8 +82,8 @@ class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var srcSearchBar: UITextField!
     @IBOutlet weak var dstSearchBar: UITextField!
     var tappedSearchBar: UITextField!
-    var origin: GMSPlace!
-    var destination: GMSPlace!
+  //  var origin: GMSPlace!
+  //  var destination: GMSPlace!
     
     @IBAction func searchBarTappedHandler(_ sender: Any) {
         let button = sender as! UIButton
