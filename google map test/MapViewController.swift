@@ -11,7 +11,7 @@ import GoogleMaps
 
 
 let fullPath = "/Users/minu/Downloads/allchargers.json" //json파일 경로
-
+//let fullPath = "./allchargers.json" //json파일 경로
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     

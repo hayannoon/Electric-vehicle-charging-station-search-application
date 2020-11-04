@@ -48,6 +48,7 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("---> \(indexPath.row)")
         print(stationId!)
@@ -62,11 +63,22 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
             print("3번이 눌림")
         } else{
             //예약이 가능한 경우 실행
+            
+            let selectedTime = indexPath.row
+            //makeReservation(stid: stationId!, chgid: chargerId!, time: "\(indexPath.row)" )
+            let alert = UIAlertController(title: "예약 확인", message: ("\(selectedTime)" + " ~ " + " \(selectedTime+1)" + " \n예약 하시겠습니까?"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {(action) in
+                
+                makeReservation(stid: self.stationId!, chgid: self.chargerId!, time: "\(indexPath.row)" )
+                
+            }))
+            
+            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            
         }
          //여기서 예약 API 날리면 됨
     }
-   
-    
     
 }
 
