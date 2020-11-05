@@ -42,6 +42,18 @@ class ViewController: UIViewController {
     
     
     
+    @IBAction func testbutton(_ sender: Any) {
+        if let controller = self.storyboard?.instantiateViewController(identifier: "TestViewController"){
+         
+             // 2. 찾은 컨트롤러로 이동한다. (push Controller)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
            super.viewDidLoad()
            

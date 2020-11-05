@@ -1,89 +1,34 @@
 //
-//  DirectionMapViewController.swift
-//  ev_map
+//  MapViewController.swift
+//  google map test
 //
-//  Created by cse on 2020/11/03.
+//  Created by 정민우 on 2020/09/24.
+//  Copyright © 2020 hayannoon. All rights reserved.
 //
-
 import Foundation
 import UIKit
 import GoogleMaps
 
-var originLatitude = Double(origin.coordinate.latitude)
-var originLongitude = Double(origin.coordinate.longitude)
-var destinationLatidue = Double(destination.coordinate.latitude)
-var destinationLongitude = Double(destination.coordinate.longitude)
+
+//let CHARGERS_PATH = String(#file[...#file.index(#file.lastIndex(of: "/")!, offsetBy: -7)] + "allchargers.json")
 
 
-
-let INIT_CAMERA = GMSCameraPosition.camera(withLatitude: originLatitude, longitude: originLongitude, zoom: 15.0)
-
-let CHARGERS_PATH = String(#file[...#file.index(#file.lastIndex(of: "/")!, offsetBy: -7)] + "allchargers.json")
-
-
-//let MARKER_LIST = makeMarke  rList()
-
-func makeMarkerList() -> [GMSMarker] {
-    var markerList: [GMSMarker] = [] //마커들을 저장할 배열 생성
+class TestViewController: UIViewController, GMSMapViewDelegate {
     
-    if let contents = try? String(contentsOfFile: CHARGERS_PATH) {
-        
-        let chargerData = contents.data(using: .utf8)!
-        do {
-            let chargerArray = try JSONDecoder().decode(Chargers.self, from: chargerData)
-            for charger in chargerArray.chargers! {
-                markerList.append(makeGMS(charger)!)
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    return markerList
-}
-
-func returnLatAndLng(lat1: Double, lat2: Double, lng1: Double, lng2: Double) -> [Double] {
-    var returnArray: [Double] = []
-    
-    if lat1 > lat2{
-        returnArray.append(lat1)
-        returnArray.append(lat2)
-    } else{
-        returnArray.append(lat2)
-        returnArray.append(lat1)
-    }
-    
-    if lng1 > lng2 {
-        returnArray.append(lng1)
-        returnArray.append(lng2)
-    } else{
-        returnArray.append(lng2)
-        returnArray.append(lng1)
-    }
-        
-    return returnArray
-}
-
-
-class DirectionMapViewController: UIViewController,GMSMapViewDelegate {
-    
-    var mapView: GMSMapView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+             super.viewDidLoad()
+            
         
-        //여기까진 마커 시작
         var markerList: [GMSMarker] = [] //마커들을 저장할 배열 생성
         
-    
         
-        var latlngArray = returnLatAndLng(lat1: originLatitude, lat2: destinationLatidue, lng1: originLongitude, lng2: destinationLongitude)
-        let baseUrl = "http://34.64.73.242:3000/api/getStationMarker/" //35.089741/34.931952/128.095317/128.053140/2"
-        let completedUrl = baseUrl + "\(latlngArray[0])" + "/" + "\(latlngArray[1])" + "/" + "\(latlngArray[2])" + "/" + "\(latlngArray[3])" + "/" + "2"
+        let baseUrl = "http://34.64.73.242:3000/api/getStationMarker/35.089741/34.931952/128.095317/128.053140/2"
+        let completedUrl = baseUrl
         let url = URL(string: completedUrl)
               let response = try! String(contentsOf: url!)
 
-        
+
         var filteredChargers: String? = "{ \"chargers\" : " + response + " } "
 
         if let contents = filteredChargers { //json 다 string형식으로 읽어온다.
@@ -119,25 +64,21 @@ class DirectionMapViewController: UIViewController,GMSMapViewDelegate {
 
         
         
+        let camera = GMSCameraPosition.camera(withLatitude: 35.089741, longitude: 128.095317, zoom: 15.0)
+        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+            mapView.delegate = self
+            mapView.isMyLocationEnabled = true //내가 추가
+            mapView.settings.myLocationButton = true; //내가 추가
+            self.view.addSubview(mapView)
+        self.view = mapView
         
-        mapView = GMSMapView.map(withFrame: self.view.frame, camera: INIT_CAMERA)
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true;
-        mapView.camera = INIT_CAMERA
-        self.view.addSubview(mapView)
-        
-        mapView.delegate = self
-        
-        if GMS_PATH != nil {
-            let direction = GMSPolyline(path: GMS_PATH)
-            direction.strokeWidth = 5.0 // 선 굵기
-            direction.map = mapView
-        }
         
         for mark in markerList{
                    mark.map = mapView
-        }
-    }
+               }
+       }
+    
+    
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool { //Marker에 거는 이벤트
         let statId = marker.title
@@ -162,5 +103,11 @@ class DirectionMapViewController: UIViewController,GMSMapViewDelegate {
         self.present(alert, animated: true)
 
          return true
+ 
+ 
     }
 }
+
+
+
+

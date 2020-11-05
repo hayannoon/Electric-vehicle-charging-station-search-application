@@ -267,6 +267,55 @@ func httpRequestHandlerGetReservationInfo(_ StatID:String, _ ChargerID:String)  
     return splitedSegment
 }
 
+
+func sendPost(paramText: String, urlString: String) {
+    // paramText를 데이터 형태로 변환
+    let paramData = paramText.data(using: .utf8)
+
+    // URL 객체 정의
+    let url = URL(string: urlString)
+
+    // URL Request 객체 정의
+    var request = URLRequest(url: url!)
+    request.httpMethod = "PUT"
+    request.httpBody = paramData
+
+    // HTTP 메시지 헤더
+    request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
+
+    // URLSession 객체를 통해 전송, 응답값 처리
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        
+        // 서버가 응답이 없거나 통신이 실패
+        if let e = error {
+          NSLog("An error has occured: \(e.localizedDescription)")
+          return
+        }
+
+        // 응답 처리 로직
+        DispatchQueue.main.async() {
+            // 서버로부터 응답된 스트링 표시
+            let outputStr = String(data: data!, encoding: String.Encoding.utf8)
+            print("result: \(outputStr!)")
+        }
+      
+    }
+    // POST 전송
+    task.resume()
+}
+
+func makeReservation(stid: String, chgid: String, time:String) {
+let paramText = "statId=\(stid)&chgerId=\(chgid)&times=\(time)"
+sendPost(paramText: paramText, urlString: "http://34.64.73.242:3000/api/reserves")
+}
+
+func cancelReservation(stid: String, chgid: String, time:String){
+let paramText = "statId=\(stid)&chgerId=\(chgid)&times=\(time)"
+sendPost(paramText: paramText, urlString: "http://34.64.73.242:3000/api/cancel")
+}
+
+
 /*
 func getChargerStatus(_ charger: String) throws -> String{
 

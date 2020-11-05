@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3311F66D25527F4C00FB76E0 /* DirectionMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3311F66C25527F4C00FB76E0 /* DirectionMapViewController.swift */; };
 		3311F6702552802D00FB76E0 /* DirectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3311F66F2552802D00FB76E0 /* DirectionResponse.swift */; };
+		3311F6732553E23800FB76E0 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3311F6722553E23800FB76E0 /* test.swift */; };
 		33306E4F253B2F7A0091B60D /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33306E4E253B2F7A0091B60D /* ReservationViewController.swift */; };
 		333AAE5B25484A9500F9F02A /* ChargersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */; };
 		333BEB11251C624700C0546B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333BEB10251C624700C0546B /* MapViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3311F66C25527F4C00FB76E0 /* DirectionMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionMapViewController.swift; sourceTree = "<group>"; };
 		3311F66F2552802D00FB76E0 /* DirectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionResponse.swift; sourceTree = "<group>"; };
+		3311F6722553E23800FB76E0 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersTableViewController.swift; sourceTree = "<group>"; };
 		33306E4E253B2F7A0091B60D /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		333BEB10251C624700C0546B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				332F81062546CC5F008C6B93 /* ChargersTableViewController.swift */,
 				33AAA73D254BF6E900D86CBB /* TimeSelectViewController.swift */,
 				3311F66F2552802D00FB76E0 /* DirectionResponse.swift */,
+				3311F6722553E23800FB76E0 /* test.swift */,
 			);
 			path = "google map test";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				333BEB13251C828E00C0546B /* Chargers.swift in Sources */,
 				3393301A251B3444006DB5A6 /* ViewController.swift in Sources */,
 				338B2F6A25236678004A6EA2 /* UrlRequest.swift in Sources */,
+				3311F6732553E23800FB76E0 /* test.swift in Sources */,
 				333BEB15251C892A00C0546B /* DirectionSearchViewController.swift in Sources */,
 				333AAE5B25484A9500F9F02A /* ChargersTableViewController.swift in Sources */,
 				3311F66D25527F4C00FB76E0 /* DirectionMapViewController.swift in Sources */,

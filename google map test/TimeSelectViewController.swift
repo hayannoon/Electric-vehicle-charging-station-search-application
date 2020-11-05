@@ -24,7 +24,7 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Why not?")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +44,7 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
         
         if newTable[indexPath.row] == "1" {
             cell.backgroundColor = UIColor.red
+            cell.timeLabel.text! += "\n예약중"
         }
         return cell
     }
