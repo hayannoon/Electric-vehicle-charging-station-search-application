@@ -52,9 +52,9 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
         //성립 되면 여기로
         
         if chargerArray![indexPath.row].stat! == "2" {
-            cell.imgView.image = UIImage(named: "availIcon.png")
+            cell.imgView.image = UIImage(named: "availIcon2.png")
         } else{
-            cell.imgView.image = UIImage(named: "unavailIcon.png")
+            cell.imgView.image = UIImage(named: "unavailIcon2.png")
             
         }
       //  let img = UIImage(named: "charger icon.jpg")

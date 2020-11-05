@@ -44,7 +44,8 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
         
         if newTable[indexPath.row] == "1" {
             cell.backgroundColor = UIColor.red
-            cell.timeLabel.text! += "\n예약중"
+            cell.timeLabel.text = timeList[indexPath.row] + " <예약 불가>"
+            //cell.backgroundColor = UIColor.red
         }
         return cell
     }
