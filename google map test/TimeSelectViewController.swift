@@ -41,10 +41,9 @@ class TimeSelectViewController: UIViewController, UITableViewDataSource, UITable
         }
         cell.timeLabel.text = timeList[indexPath.row] //시간으로 표 채운다.
        // let newTable:[String] = try! httpRequestHandlerGetReservationInfo(stationId!, chargerId!)
-        
+        cell.backgroundColor = UIColor.white
         if newTable![indexPath.row] == "1" {
             
-            //cell.backgroundColor = UIColor.red
             cell.timeLabel.text = timeList[indexPath.row] + " <예약 불가>"
             //cell.timeLabel.textColor = UIColor.red
             cell.backgroundColor = UIColor.red
