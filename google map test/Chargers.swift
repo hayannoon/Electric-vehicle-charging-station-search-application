@@ -88,6 +88,15 @@ func makeGMS(_ charger: Charger) -> GMSMarker?{
     if(charger.lat != nil && charger.lng != nil){
         let latitude = Double(charger.lat!)
         let longitude = Double(charger.lng!)
+     
+        
+        if latitude == nil {
+            return nil
+        } else if longitude == nil {
+            return nil
+        }
+        //에러나서 추가
+        
         maker.position = CLLocationCoordinate2DMake(latitude!,longitude!)
         maker.title = charger.statId! //+ charger.addr!
         

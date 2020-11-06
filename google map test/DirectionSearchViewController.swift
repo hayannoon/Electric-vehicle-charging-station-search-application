@@ -76,6 +76,11 @@ var destination: GMSPlace!
 
 var GMS_PATH: GMSMutablePath? = nil
 
+var directionPathMaxLat: Double = 0.0
+var directionPathMinLat: Double = 1000.0
+var directionPathMaxLng: Double = 0.0
+var directionPathMinLng: Double = 1000.0
+
 class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var locationSearchBar: UITextField!
@@ -148,6 +153,7 @@ class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
             
             let directionPath = try! JSONDecoder().decode(DirectionPaths.self, from: str.data(using: .utf8)!)
             DispatchQueue.main.async {
+                
                 self.drawPath(directionPath)
             }
         }
@@ -158,7 +164,20 @@ class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
         GMS_PATH = GMSMutablePath()
         for lnglat in directionPath.list! {
             GMS_PATH!.add(CLLocationCoordinate2D(latitude: lnglat[1], longitude: lnglat[0]))
+            if Double(lnglat[1]) > directionPathMaxLat{
+                directionPathMaxLat = Double(lnglat[1])
+            } else if Double(lnglat[1]) < directionPathMinLat {
+                directionPathMinLat = Double(lnglat[1])
+            }
+            
+            if Double(lnglat[0]) > directionPathMaxLng{
+                directionPathMaxLng = lnglat[0]
+            } else if Double(lnglat[0]) < directionPathMinLng {
+                directionPathMinLng = Double(lnglat[0])
+            }
+            
         }
+        
         guard let dmvc = self.storyboard?.instantiateViewController(identifier: "DirectionMapViewController") as? DirectionMapViewController else { return }
         self.navigationController?.pushViewController(dmvc, animated: true)
     }

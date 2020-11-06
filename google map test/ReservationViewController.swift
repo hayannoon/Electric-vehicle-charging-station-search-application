@@ -25,12 +25,12 @@ class ReservationViewController : UIViewController ,UITextViewDelegate{
     }
     
     func updateUI() {
-        if let name = self.name, let bounty = self.bounty {
-            let img = UIImage(named: "charger icon.png")
-            imgView.image = img
-           nameLabel.text = "Reservation"
-           bountyLabel.text = name + "\n" + bounty
-        }
+//        if let name = self.name, let bounty = self.bounty {
+//            let img = UIImage(named: "charger icon.png")
+//            imgView.image = img
+//           nameLabel.text = "Reservation"
+//           bountyLabel.text = name + "\n" + bounty
+//        }
     }
     
     

@@ -84,8 +84,6 @@ class ChargersTableViewController: UIViewController, UITableViewDataSource, UITa
             self.navigationController?.pushViewController(controller, animated: true)
         }
  */
- 
-        
     }
 }
 

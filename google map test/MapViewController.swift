@@ -14,7 +14,7 @@ import GoogleMaps
 
 let fullPath = "/Users/minu/Downloads/allchargers.json" //json파일 경로
 //let fullPath = "./allchargers.json" //json파일 경로
-
+let CHARGERS_PATH: String = #file[...#file[..<#file.lastIndex(of: "/")!].lastIndex(of: "/")!] + "allchargers.json"
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
     
@@ -24,7 +24,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
         var markerList: [GMSMarker] = [] //마커들을 저장할 배열 생성
         
-        if let contents = try? String(contentsOfFile: fullPath){ //json 다 string형식으로 읽어온다.
+        if let contents = try? String(contentsOfFile: CHARGERS_PATH){ //json 다 string형식으로 읽어온다.
             
             if let chargerData = contents.data(using: .utf8)
             {

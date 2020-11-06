@@ -16,9 +16,9 @@ var destinationLongitude = Double(destination.coordinate.longitude)
 
 
 
-let INIT_CAMERA = GMSCameraPosition.camera(withLatitude: originLatitude, longitude: originLongitude, zoom: 15.0)
+var INIT_CAMERA = GMSCameraPosition.camera(withLatitude: originLatitude, longitude: originLongitude, zoom: 15.0)
 
-let CHARGERS_PATH = String(#file[...#file.index(#file.lastIndex(of: "/")!, offsetBy: -7)] + "allchargers.json")
+//let CHARGERS_PATH: String = #file[...#file[..<#file.lastIndex(of: "/")!].lastIndex(of: "/")!] + "allchargers.json"
 
 
 //let MARKER_LIST = makeMarke  rList()
@@ -71,15 +71,23 @@ class DirectionMapViewController: UIViewController,GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        INIT_CAMERA = GMSCameraPosition.camera(withLatitude: origin.coordinate.latitude, longitude: origin.coordinate.longitude, zoom: 15.0)
+        originLatitude = Double(origin.coordinate.latitude)
+        originLongitude = Double(origin.coordinate.longitude)
+        destinationLatidue = Double(destination.coordinate.latitude)
+        destinationLongitude = Double(destination.coordinate.longitude)
+
+        print("Test: " + "\(directionPathMinLng)")
         //여기까진 마커 시작
         var markerList: [GMSMarker] = [] //마커들을 저장할 배열 생성
         
-    
+        
         
         var latlngArray = returnLatAndLng(lat1: originLatitude, lat2: destinationLatidue, lng1: originLongitude, lng2: destinationLongitude)
         let baseUrl = "http://34.64.73.242:3000/api/getStationMarker/" //35.089741/34.931952/128.095317/128.053140/2"
-        let completedUrl = baseUrl + "\(latlngArray[0])" + "/" + "\(latlngArray[1])" + "/" + "\(latlngArray[2])" + "/" + "\(latlngArray[3])" + "/" + "2"
+    //    let completedUrl = baseUrl + "\(latlngArray[0])" + "/" + "\(latlngArray[1])" + "/" + "\(latlngArray[2])" + "/" + "\(latlngArray[3])" + "/" + "2"
+        
+        let completedUrl = baseUrl + "\(directionPathMaxLat)" + "/" + "\(directionPathMinLat)" + "/" + "\(directionPathMaxLng)" + "/" + "\(directionPathMinLng)" + "/" + "2"
         let url = URL(string: completedUrl)
               let response = try! String(contentsOf: url!)
 
