@@ -53,7 +53,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGw-gg-AwH">
                                 <rect key="frame" x="88" y="673" width="202" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="테스트버튼"/>
                                 <connections>
                                     <action selector="testbutton:" destination="cPg-zp-eGa" eventType="touchUpInside" id="l6D-EP-IoY"/>
                                 </connections>
